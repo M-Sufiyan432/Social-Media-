@@ -16,7 +16,7 @@ const Nav = () => {
       <div ><GoHomeFill className='text-white h-[25px] w-[25px] cursor-pointer'onClick={()=>navigate("/")}/></div>
       <div ><FaSearch className='text-white h-[25px] w-[25px] cursor-pointer' /></div>
       <div ><BsPlusSquareDotted className='text-white h-[25px] w-[25px] cursor-pointer' onClick={()=>navigate("/upload")}/></div>
-      <div ><MdSlowMotionVideo className='text-white h-[28px] w-[28px] cursor-pointer' /></div>
+      <div onClick={()=>navigate("/loops")} ><MdSlowMotionVideo className='text-white h-[28px] w-[28px] cursor-pointer' /></div>
     <div className="w-[40px] h-[40px] border-2 border-black rounded-full cursor-pointer overflow-hidden">
         <img src={userData.profileImage || dp} className="w-full object-cover" onClick={()=>navigate(`/profile/${userData.username}`)}/>
       </div>

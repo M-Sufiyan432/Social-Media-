@@ -11,11 +11,14 @@ import Profile from "./pages/Profile.jsx";
 import EditProfile from "./pages/EditProfile.jsx";
 import Upload from "./pages/Upload.jsx";
 import useGetAllPost from "./hook/getAllPost.jsx";
+import Loops from "./pages/Loops.jsx";
+import useGetAllLoops from "./hook/getAllLoops.jsx";
 export const serverURL = `http://localhost:8000`;
 const App = () => {
   useGetCurrentUser();
   useGetSuggestUser();
   useGetAllPost();
+  useGetAllLoops();
   const { userData } = useSelector((state) => state.user);
   return (
     <Routes>
@@ -47,6 +50,7 @@ const App = () => {
         path="/edit-profile"
         element={userData ? <EditProfile /> : <Navigate to={"/"} />}
       />
+      <Route path="/Loops" element={userData?<Loops/>:<Navigate to={"/"}/>}/>
     </Routes>
   );
 };

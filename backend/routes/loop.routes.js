@@ -7,7 +7,7 @@ const loopRouter = Router();
 
 loopRouter.post("/upload",isAuth,upload.single("media"),uploadLoops);
 loopRouter.get("/getAll",isAuth,getAllLoops)
-loopRouter.get("/like/:postId",isAuth,like);
+loopRouter.get("/like/:loopId",isAuth,like);
 loopRouter.post("/comment",isAuth,comment)
 
 export default loopRouter;

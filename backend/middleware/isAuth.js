@@ -11,7 +11,6 @@ const isAuth = async(req,res,next)=>{
 
         req.userId = verifyToken.userId;
         // console.log("req UserId",req.userId);
-        
         next()
     } catch (error) {
         return res.status(500).json({message:"isAuth error",error})
