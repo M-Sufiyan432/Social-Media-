@@ -13,7 +13,7 @@ import Upload from "./pages/Upload.jsx";
 import useGetAllPost from "./hook/getAllPost.jsx";
 import Loops from "./pages/Loops.jsx";
 import useGetAllLoops from "./hook/getAllLoops.jsx";
-export const serverURL = `http://localhost:8000`;
+export const serverURL = `https://social-media-backened.onrender.com`;
 const App = () => {
   useGetCurrentUser();
   useGetSuggestUser();
