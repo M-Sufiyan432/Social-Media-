@@ -7,6 +7,8 @@ import cors from "cors";
 import postRouter from "./routes/post.routes.js";
 import loopRouter from "./routes/loop.routes.js";
 import storyRouter from "./routes/story.routes.js";
+import dotenv from "dotenv";
+dotenv.config();
 
 const app = express();
 
