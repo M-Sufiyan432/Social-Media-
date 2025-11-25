@@ -14,6 +14,8 @@ const app = express();
 
 // Port from Render
 const PORT = process.env.PORT || 8000;
+console.log("Render PORT =", process.env.PORT);
+
 
 app.use(cors({
   origin: [
