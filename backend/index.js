@@ -13,6 +13,11 @@ dotenv.config();
 const app = express();
 
 // IMPORTANT for Render
+
+console.log("DOTENV TEST → MONGO_DB_URL =", process.env.MONGO_DB_URL);
+
+
+
 const PORT = process.env.PORT || 8000;
 
 app.use(cors({
