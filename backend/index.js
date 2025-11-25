@@ -12,18 +12,13 @@ dotenv.config();
 
 const app = express();
 
-// IMPORTANT for Render
-
-console.log("DOTENV TEST → MONGO_DB_URL =", process.env.MONGO_DB_URL);
-
-
-
+// Port from Render
 const PORT = process.env.PORT || 8000;
 
 app.use(cors({
   origin: [
     "http://localhost:5173",
-    "https://social-media-frontend-p207.onrender.com"   // replace with your real frontend URL
+    "https://social-media-frontend-p207.onrender.com"
   ],
   credentials: true,
 }));
@@ -38,10 +33,14 @@ app.use("/api/loop", loopRouter);
 app.use("/api/story", storyRouter);
 
 app.get("/", (req, res) => {
-  res.send("This will work");
+  res.send("Backend is working 🚀");
 });
 
-app.listen(PORT, () => {
-  connectDb();
-  console.log(`Server running on port ${PORT}`);
+// *** FIX HERE ***
+connectDb().then(() => {
+  app.listen(PORT, () => {
+    console.log(`Server running on port ${PORT}`);
+  });
+}).catch((err) => {
+  console.error("Failed to connect to MongoDB:", err);
 });
